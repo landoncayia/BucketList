@@ -21,4 +21,9 @@ struct Location: Identifiable, Codable, Equatable {
     
     // Example to improve previewing
     static let example = Location(id: UUID(), name: "Buckingham Palace", description: "Where Queen Elizabeth lives with her dorgis", latitude: 51.501, longitude: -0.141)
+    
+    // Overload == operator by id (conforms to Equatable above)
+    static func ==(lhs: Location, rhs: Location) -> Bool {
+        lhs.id == rhs.id
+    }
 }
