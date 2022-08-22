@@ -64,7 +64,12 @@ struct ContentView: View {
         }
         // Optional is automatically unwrapped
         .sheet(item: $selectedPlace) { place in
-            Text(place.name)
+            EditView(location: place) { newLocation in
+                // Find previous location, replace with new one
+                if let index = locations.firstIndex(of: place) {
+                    locations[index] = newLocation
+                }
+            }
         }
     }
 }
