@@ -20,6 +20,26 @@ struct ContentView: View {
                 .fill(.blue)
                 .opacity(0.3)
                 .frame(width: 32, height: 32)
+            
+            VStack {
+                Spacer()
+                
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        // create a new location
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .padding()
+                    .background(.black.opacity(0.75))
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .clipShape(Circle())
+                    .padding(.trailing)
+                }
+            }
         }
     }
 }
