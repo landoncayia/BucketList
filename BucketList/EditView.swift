@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct EditView: View {
+    /// Tracks the state of a network fetch request from the Wikipedia API
+    enum LoadingState {
+        case loading, loaded, failed
+    }
+    
     @Environment(\.dismiss) var dismiss
     var location: Location
     var onSave: (Location) -> Void
@@ -15,12 +20,32 @@ struct EditView: View {
     @State private var name: String
     @State private var description: String
     
+    @State private var loadingState = LoadingState.loading
+    @State private var pages = [Page]()
+    
     var body: some View {
         NavigationView {
             Form {
                 Section {
                     TextField("Place name", text: $name)
                     TextField("Description", text: $description)
+                }
+                
+                Section("Nearby…") {
+                    switch loadingState {
+                    case .loading:
+                        Text("Loading…")
+                    case .loaded:
+                        ForEach(pages, id: \.pageid) { page in
+                            Text(page.title)
+                                .font(.headline)
+                            + Text("; ")
+                            + Text("Page description here")
+                                .italic()
+                        }
+                    case .failed:
+                        Text("Please try again later.")
+                    }
                 }
             }
             .navigationTitle("Place details")
