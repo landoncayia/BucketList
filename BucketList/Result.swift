@@ -18,8 +18,13 @@ struct Query: Codable {
 }
 
 /// Represents a page returned via a query to the Wikipedia API for places nearby to given GPS coordinates.
-struct Page: Codable {
+struct Page: Codable, Comparable {
     let pageid: Int
     let title: String
     let terms: [String: [String]]?
+    
+    /// Pages are sorted alphabetically, by title.
+    static func <(lhs: Page, rhs: Page) -> Bool {
+        lhs.title < rhs.title
+    }
 }
