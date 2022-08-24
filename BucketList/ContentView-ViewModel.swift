@@ -12,7 +12,7 @@ extension ContentView {
     // Generally, ObservableObject classes should always be marked with @MainActor
     @MainActor class ViewModel: ObservableObject {
         @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
-        @Published private(set) var locations = [Location]()
+        @Published private(set) var locations: [Location]
         // Optional because a location may or may not be selected
         @Published var selectedPlace: Location?
         
@@ -39,6 +39,7 @@ extension ContentView {
         func addLocation() {
             let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
             locations.append(newLocation)
+            save()
         }
         
         func update(location: Location) {
@@ -48,6 +49,7 @@ extension ContentView {
             // Find previous location, replace with new one
             if let index = locations.firstIndex(of: selectedPlace) {
                 locations[index] = location
+                save()
             }
         }
     }
