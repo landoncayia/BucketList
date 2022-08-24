@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C71F3C5528B536EC0013AFD0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F3C5428B536EC0013AFD0 /* Result.swift */; };
 		C75A984428B66F3C002248A8 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A984328B66F3C002248A8 /* ContentView-ViewModel.swift */; };
+		C75A984628B6738E002248A8 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A984528B6738E002248A8 /* FileManager-DocumentsDirectory.swift */; };
 		C765837C28B145B600881EC4 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765837B28B145B600881EC4 /* BucketListApp.swift */; };
 		C765837E28B145B600881EC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765837D28B145B600881EC4 /* ContentView.swift */; };
 		C765838028B145B700881EC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C765837F28B145B700881EC4 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		C71F3C5428B536EC0013AFD0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		C75A984328B66F3C002248A8 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		C75A984528B6738E002248A8 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		C765837828B145B600881EC4 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C765837B28B145B600881EC4 /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		C765837D28B145B600881EC4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				C765837B28B145B600881EC4 /* BucketListApp.swift */,
 				C765837D28B145B600881EC4 /* ContentView.swift */,
 				C75A984328B66F3C002248A8 /* ContentView-ViewModel.swift */,
+				C75A984528B6738E002248A8 /* FileManager-DocumentsDirectory.swift */,
 				C71F3C5428B536EC0013AFD0 /* Result.swift */,
 				C7E5847628B3E97D000F118A /* EditView.swift */,
 				C7E5847428B3E343000F118A /* Location.swift */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C765837E28B145B600881EC4 /* ContentView.swift in Sources */,
+				C75A984628B6738E002248A8 /* FileManager-DocumentsDirectory.swift in Sources */,
 				C75A984428B66F3C002248A8 /* ContentView-ViewModel.swift in Sources */,
 				C71F3C5528B536EC0013AFD0 /* Result.swift in Sources */,
 				C7E5847528B3E343000F118A /* Location.swift in Sources */,
