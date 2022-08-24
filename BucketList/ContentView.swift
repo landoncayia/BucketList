@@ -9,15 +9,11 @@ import MapKit
 import SwiftUI
 
 struct ContentView: View {
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
-    @State private var locations = [Location]()
-    
-    // Optional because a location may or may not be selected
-    @State private var selectedPlace: Location?
+    @StateObject private var viewModel = ViewModel()
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
+            Map(coordinateRegion: $viewModel.mapRegion, annotationItems: viewModel.locations) { location in
                 MapAnnotation(coordinate: location.coordinate) {
                     VStack {
                         Image(systemName: "star.circle")
@@ -31,7 +27,7 @@ struct ContentView: View {
                             .fixedSize() // stop long labels from getting truncated
                     }
                     .onTapGesture {
-                        selectedPlace = location
+                        viewModel.selectedPlace = location
                     }
                 }
             }
@@ -49,8 +45,8 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
-                        locations.append(newLocation)
+                        let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: viewModel.mapRegion.center.latitude, longitude: viewModel.mapRegion.center.longitude)
+                        viewModel.locations.append(newLocation)
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -64,11 +60,11 @@ struct ContentView: View {
             }
         }
         // Optional is automatically unwrapped
-        .sheet(item: $selectedPlace) { place in
+        .sheet(item: $viewModel.selectedPlace) { place in
             EditView(location: place) { newLocation in
                 // Find previous location, replace with new one
-                if let index = locations.firstIndex(of: place) {
-                    locations[index] = newLocation
+                if let index = viewModel.locations.firstIndex(of: place) {
+                    viewModel.locations[index] = newLocation
                 }
             }
         }
