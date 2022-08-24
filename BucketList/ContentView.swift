@@ -45,8 +45,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: viewModel.mapRegion.center.latitude, longitude: viewModel.mapRegion.center.longitude)
-                        viewModel.locations.append(newLocation)
+                        viewModel.addLocation()
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -62,10 +61,7 @@ struct ContentView: View {
         // Optional is automatically unwrapped
         .sheet(item: $viewModel.selectedPlace) { place in
             EditView(location: place) { newLocation in
-                // Find previous location, replace with new one
-                if let index = viewModel.locations.firstIndex(of: place) {
-                    viewModel.locations[index] = newLocation
-                }
+                viewModel.update(location: newLocation)
             }
         }
     }
