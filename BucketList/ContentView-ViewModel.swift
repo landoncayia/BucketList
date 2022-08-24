@@ -64,7 +64,9 @@ extension ContentView {
                 
                 context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                     if success {
-                        self.isUnlocked = true
+                        Task { @MainActor in
+                            self.isUnlocked = true
+                        }
                     } else {
                         // error
                     }
