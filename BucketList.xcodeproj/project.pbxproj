@@ -19,6 +19,10 @@
 		C765838D28B145F400881EC4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C765838B28B145F400881EC4 /* .gitignore */; };
 		C7E5847528B3E343000F118A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E5847428B3E343000F118A /* Location.swift */; };
 		C7E5847728B3E97D000F118A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E5847628B3E97D000F118A /* EditView.swift */; };
+		C7F8395B28B81FEE00E4A5A5 /* bucketlist2.png in Resources */ = {isa = PBXBuildFile; fileRef = C7F8395728B81FEE00E4A5A5 /* bucketlist2.png */; };
+		C7F8395C28B81FEE00E4A5A5 /* bucketlist3.png in Resources */ = {isa = PBXBuildFile; fileRef = C7F8395828B81FEE00E4A5A5 /* bucketlist3.png */; };
+		C7F8395D28B81FEE00E4A5A5 /* bucketlist1.png in Resources */ = {isa = PBXBuildFile; fileRef = C7F8395928B81FEE00E4A5A5 /* bucketlist1.png */; };
+		C7F8395E28B81FEE00E4A5A5 /* bucketlist4.png in Resources */ = {isa = PBXBuildFile; fileRef = C7F8395A28B81FEE00E4A5A5 /* bucketlist4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		C765838B28B145F400881EC4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C7E5847428B3E343000F118A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C7E5847628B3E97D000F118A /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		C7F8395728B81FEE00E4A5A5 /* bucketlist2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucketlist2.png; sourceTree = "<group>"; };
+		C7F8395828B81FEE00E4A5A5 /* bucketlist3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucketlist3.png; sourceTree = "<group>"; };
+		C7F8395928B81FEE00E4A5A5 /* bucketlist1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucketlist1.png; sourceTree = "<group>"; };
+		C7F8395A28B81FEE00E4A5A5 /* bucketlist4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucketlist4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,10 @@
 		C765838A28B145F400881EC4 /* screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				C7F8395928B81FEE00E4A5A5 /* bucketlist1.png */,
+				C7F8395728B81FEE00E4A5A5 /* bucketlist2.png */,
+				C7F8395828B81FEE00E4A5A5 /* bucketlist3.png */,
+				C7F8395A28B81FEE00E4A5A5 /* bucketlist4.png */,
 			);
 			path = screenshots;
 			sourceTree = "<group>";
@@ -157,8 +169,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F8395E28B81FEE00E4A5A5 /* bucketlist4.png in Resources */,
 				C765838D28B145F400881EC4 /* .gitignore in Resources */,
+				C7F8395B28B81FEE00E4A5A5 /* bucketlist2.png in Resources */,
 				C765838C28B145F400881EC4 /* README.md in Resources */,
+				C7F8395D28B81FEE00E4A5A5 /* bucketlist1.png in Resources */,
+				C7F8395C28B81FEE00E4A5A5 /* bucketlist3.png in Resources */,
 				C765838328B145B700881EC4 /* Preview Assets.xcassets in Resources */,
 				C765838028B145B700881EC4 /* Assets.xcassets in Resources */,
 			);

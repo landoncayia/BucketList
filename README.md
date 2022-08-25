@@ -8,7 +8,10 @@ To run this project, you will need a Mac computer with the latest version of Xco
 
 ## Features
 
-
+* Explorable map experience
+* Add custom marked locations with names and descriptions
+* Edit saved locations
+* Saved data encryption behind Face ID or Touch ID
 
 ## Credit
 
@@ -28,9 +31,9 @@ The idea for this project came from Paul Hudson's *100 Days of SwiftUI*. I may e
 
 ## Screenshots
 
-Screenshots will go here when they are ready.
-
-<!--<p float="left">-->
-<!--    <img src="screenshots/bucketlist1.png" alt="BucketList Screenshot 1" width="341">-->
-<!--    <img src="screenshots/bucketlist2.png" alt="BucketList Screenshot 2" width="341">-->
-<!--</p>-->
+<p float="left">
+    <img src="screenshots/bucketlist1.png" alt="BucketList Screenshot 1" width="341">
+    <img src="screenshots/bucketlist2.png" alt="BucketList Screenshot 2" width="341">
+    <img src="screenshots/bucketlist3.png" alt="BucketList Screenshot 3" width="341">
+    <img src="screenshots/bucketlist4.png" alt="BucketList Screenshot 4" width="341">
+</p>
