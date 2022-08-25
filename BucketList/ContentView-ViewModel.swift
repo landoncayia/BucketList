@@ -17,6 +17,8 @@ extension ContentView {
         // Optional because a location may or may not be selected
         @Published var selectedPlace: Location?
         @Published var isUnlocked = false
+        @Published var showingAuthenticationAlert = false
+        @Published var authenticationError = ""
         
         let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")
         
@@ -68,11 +70,19 @@ extension ContentView {
                             self.isUnlocked = true
                         }
                     } else {
-                        // error
+                        // biometric authentication error
+                        Task { @MainActor in
+                            self.authenticationError = "\(authenticationError?.localizedDescription ?? "Unknown error.")"
+                            self.showingAuthenticationAlert = true
+                        }
                     }
                 }
             } else {
-                // no biometrics
+                // no biometrics available
+                Task { @MainActor in
+                    self.authenticationError = "Neither Touch ID nor Face ID are available on this device."
+                    self.showingAuthenticationAlert = true
+                }
             }
         }
     }

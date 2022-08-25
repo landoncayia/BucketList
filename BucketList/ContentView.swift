@@ -74,6 +74,11 @@ struct ContentView: View {
                 viewModel.update(location: newLocation)
             }
         }
+        .alert("Authentication error", isPresented: $viewModel.showingAuthenticationAlert) {
+            Button("OK") { }
+        } message: {
+            Text(viewModel.authenticationError)
+        }
     }
 }
 
