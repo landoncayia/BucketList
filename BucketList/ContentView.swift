@@ -12,8 +12,8 @@ struct ContentView: View {
     @StateObject private var viewModel = ViewModel()
     
     var body: some View {
-        if viewModel.isUnlocked {
-            ZStack {
+        ZStack {
+            if viewModel.isUnlocked {
                 Map(coordinateRegion: $viewModel.mapRegion, annotationItems: viewModel.locations) { location in
                     MapAnnotation(coordinate: location.coordinate) {
                         VStack {
@@ -32,7 +32,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                    .ignoresSafeArea()
+                .ignoresSafeArea()
                 
                 Circle()
                     .fill(.blue)
@@ -58,21 +58,21 @@ struct ContentView: View {
                         }
                     }
                 }
-            }
-            // Optional is automatically unwrapped
-            .sheet(item: $viewModel.selectedPlace) { place in
-                EditView(location: place) { newLocation in
-                    viewModel.update(location: newLocation)
+            } else {
+                Button("Unlock Places") {
+                    viewModel.authenticate()
                 }
+                .padding()
+                .background(.blue)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
             }
-        } else {
-            Button("Unlock Places") {
-                viewModel.authenticate()
+        }
+        // Optional is automatically unwrapped
+        .sheet(item: $viewModel.selectedPlace) { place in
+            EditView(location: place) { newLocation in
+                viewModel.update(location: newLocation)
             }
-            .padding()
-            .background(.blue)
-            .foregroundColor(.white)
-            .clipShape(Capsule())
         }
     }
 }
